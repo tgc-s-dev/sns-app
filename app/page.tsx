@@ -8,6 +8,7 @@ export default function Home() {
         <p className="mt-4 text-gray-600">
           投稿を共有できるシンプルなSNSアプリです。
         </p>
+        
         <div className="mt-4 flex gap-4">
            <Link href="/login" className="bg-blue-500 p-3 rounded-lg text-white">ログイン</Link> 
            <Link href="/register" className="bg-gray-200 p-3 rounded-lg text-black">新規登録</Link>   
