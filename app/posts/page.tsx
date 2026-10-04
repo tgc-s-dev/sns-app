@@ -1,39 +1,31 @@
 import Link from "next/link";
+import type { Post } from "@/types/post";
 
-type Post = {
-  id: number;
-  userName: string;
-  content: string;
-  createdAt: string;
-  likesCount: number;
-};
-
+// 仮データ
 const posts: Post[] = [
   {
     id: 1,
-    userName: "田中太郎",
-    content: "Mini SNSを作り始めました!",
-    createdAt: "2026年7月12日",
-    likesCount: 3,
+    userName: "test",
+    content: "Mini SNSを作り始めました",
+    createdAt: "2026年9月09日"
   },
   {
     id: 2,
-    userName: "鈴木花子",
-    content: "Next.jsのルーティングを学習中です。",
-    createdAt: "2026年7月11日",
-    likesCount: 5,
+    userName: "test",
+    content: "ex",
+    createdAt: "2026年10月10日"
+   
   },
 ];
 
 export default function PostsPage() {
   return (
-    <main className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100">
       <header className="border-b border-gray-200 bg-white">
         <div className="mx-auto flex max-w-2xl items-center justify-between p-4">
           <Link href="/posts" className="text-xl font-bold text-gray-900">
             Mini SNS
           </Link>
-
           <button
             type="button"
             className="rounded-lg bg-gray-200 px-4 py-2 text-sm font-bold text-gray-900"
@@ -87,13 +79,6 @@ export default function PostsPage() {
               <div className="mt-5 flex items-center gap-3">
                 <button
                   type="button"
-                  className="rounded-lg bg-pink-100 px-3 py-2 text-sm font-bold text-pink-700"
-                >
-                  いいね {post.likesCount}
-                </button>
-
-                <button
-                  type="button"
                   className="rounded-lg bg-gray-200 px-3 py-2 text-sm font-bold text-gray-700"
                 >
                   削除
@@ -103,6 +88,6 @@ export default function PostsPage() {
           ))}
         </section>
       </main>
-    </main>
+    </div>
   );
 }
