@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Post } from "@/types/post";
 import PostCard from "@/components/PostCard";
+import PostForm from "@/components/PostForm";
 
 // 仮データ
 const posts: Post[] = [
@@ -39,30 +40,7 @@ export default function PostsPage() {
       <main className="mx-auto max-w-2xl p-4">
         <section className="rounded-xl bg-white p-6 shadow">
           <h1 className="text-2xl font-bold text-gray-900">投稿一覧</h1>
-
-          <form className="mt-4">
-            <label
-              htmlFor="post-content"
-              className="block text-sm font-bold text-gray-700"
-            >
-              新しい投稿
-            </label>
-
-            <textarea
-              id="post-content"
-              name="content"
-              rows={4}
-              placeholder="いま何をしていますか？"
-              className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-gray-900"
-            />
-
-            <button
-              type="submit"
-              className="mt-3 rounded-lg bg-blue-600 px-4 py-2 font-bold text-white"
-            >
-              投稿する
-            </button>
-          </form>
+          <PostForm />
         </section>
 
         <section className="mt-6 space-y-4">
