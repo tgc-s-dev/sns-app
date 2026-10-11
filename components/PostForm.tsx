@@ -1,4 +1,10 @@
+"use client";
+
+import { useState } from "react";
+ 
 export default function PostForm(){
+    const [content,setContent] = useState("");
+
     return (
         <form className="mt-4">
             <label htmlFor="post-content" 
@@ -11,8 +17,15 @@ export default function PostForm(){
             id="post-content"
             rows={4}
             placeholder="いま何をしていますか"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
             className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-gray-900"
             />
+            <p className="mt-2 text-sm text-gray-500">
+                {content.length}文字
+            </p>
+
+
             <button
             type="submit"
             disabled

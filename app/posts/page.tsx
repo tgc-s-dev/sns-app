@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Post } from "@/types/post";
-import PostCard from "@/components/PostCard";
-import PostForm from "@/components/PostForm";
+import PostsClient from "@/components/PostsClient"
 
 // 仮データ
 const posts: Post[] = [
@@ -38,16 +37,7 @@ export default function PostsPage() {
       </header>
 
       <main className="mx-auto max-w-2xl p-4">
-        <section className="rounded-xl bg-white p-6 shadow">
-          <h1 className="text-2xl font-bold text-gray-900">投稿一覧</h1>
-          <PostForm />
-        </section>
-
-        <section className="mt-6 space-y-4">
-          {posts.map((post) => (
-            <PostCard key={post.id} post={post}/>
-          ))}
-        </section>
+        <PostsClient initialPosts={posts} />
       </main>
     </div>
   );
