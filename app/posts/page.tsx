@@ -15,7 +15,6 @@ const posts: Post[] = [
     userName: "test",
     content: "ex",
     createdAt: "2026年10月10日"
-   
   },
 ];
 
@@ -25,7 +24,7 @@ export default function PostsPage() {
       <header className="border-b border-gray-200 bg-white">
         <div className="mx-auto flex max-w-2xl items-center justify-between p-4">
           <Link href="/posts" className="text-xl font-bold text-gray-900">
-            Mini SNS
+            SNS-app
           </Link>
           <button
             type="button"
