@@ -26,6 +26,14 @@ export default function PostClient({ initialPosts } : PostClientProps){
         });
     }
 
+    function handleDeletePost(postId:number){
+        if(!window.confirm("この投稿を削除しますか?"))return;
+
+        setPosts((currentPosts) => 
+            currentPosts.filter((post) => post.id !== postId)
+        );
+    }
+
 return(
     <>
     <section className="rounded-xl bg-white p-6 shadow">
@@ -35,7 +43,7 @@ return(
 
     <section className="mt-6 space-y-4">
         {posts.map((post) => (
-            <PostCard key={post.id} post={post} />
+            <PostCard key={post.id} post={post} onDelete={handleDeletePost} />
         ))}
     </section>
     </>                         

@@ -2,9 +2,10 @@ import type { Post } from "@/types/post";
 
 type PostCardProps = {
     post: Post;
+    onDelete:(postId:number) => void;
 }
 
-export default function PostCard({ post }:PostCardProps){
+export default function PostCard({ post, onDelete }:PostCardProps){
     return(
         <article className="rounded-xl bg-white p-6 shadow">
             <div className="flex items-center justify-between">
@@ -19,6 +20,7 @@ export default function PostCard({ post }:PostCardProps){
             <div className="mt-5 flex items-center gap-3">
                 <button 
                 type="button"
+                onClick={() => onDelete(post.id)}
                 className="rounded-lg bg-gray-200 px-3 py-2 text-sm font-bold text-gray-700"
                 >
                     削除
